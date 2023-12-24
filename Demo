@@ -1,0 +1,50 @@
+menu = input("Welcome to Facility Demo! type 'start' to begin, or type 'help' now for help later on :3. ")
+# useful commands of those new
+if menu == 'help':
+    print("'pick up (object)' to grab or interact")
+    print("'inspect (object)' to inspect")
+    print("'use (object)' to use something")
+# starting of the game
+elif menu == 'start':
+    print("Snow falls all around, blanketing the ground in a sea of white. Your coat is caked in the powder as cold washes over you.\n Before long, A light illuminates in the distance, like a twinkle, a twinkle of hope.")
+    owo = input("do you wish to continue towards the light? ")
+
+# second choice
+    if owo == 'yes':
+      print("you slowly walk towards the light, before long a one story home looms over you. The only way up is up the stairs, covered in snow.")
+      print("going up the stairs, you step onto a wooden porch. ")
+
+      # values to help the story
+      key = 0
+      while True:
+          porch = input("> ")
+
+          # main story, first puzzle
+          if porch == "inspect mat":
+              print("Under the door is a mat, it reads 'welcome home' ")
+          elif porch == "inspect porch":
+              print("The porch is wooden, bare of snow thanks to the ceiling above. A broken fan hangs above. There is a mat under the door ")
+          elif porch == "pick up mat" or "pick up door mat" and key == 0:
+              print("You lift it up and you find a key, you pocket it. ")
+              key = key + 1
+          elif porch == "pick up mat" or "pick up door mat" and key == 1:
+              print("The mat is too big to carry.")
+          elif porch == "open door" and key == 0:
+              print("You try the door and it's locked shut.")
+          elif porch == "open door" or "use key" and key == 1:
+              print("You insert the key and open the door. It creaks open and lets you inside.")
+              break
+
+          else:
+              print("You cannot do that.")
+
+# start of the game (NO) choice
+    elif owo == 'no':
+        print("You ignore the light and go off into a random direction. Warmth slowly encroaches as your organs slowly fail.\n The memories that led you here fill your mind as you fall into the snow, and close your eyes to dream forever more.")
+        quit()
+    else:
+          quit()
+# stops the program if the player fucks up like a dumb-ass
+else:
+    quit()
+
